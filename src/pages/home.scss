@@ -16,5 +16,34 @@
 
   >main {
     flex: 1;
+    display: grid;
+    grid-template:
+      "box1 box2 box4 box5" 755fr
+      "box3 box3 box4 box5" 363fr / 366fr 361fr 811fr 747fr;
+
+    >.section1 {
+      grid-area: box1;
+      background: rgb(178, 178, 201);
+    }
+
+    >.section2 {
+      grid-area: box2;
+      background-color: royalblue;
+    }
+
+    >.section3 {
+      grid-area: box3;
+      background-color: rgb(184, 99, 99);
+    }
+
+    >.section4 {
+      grid-area: box4;
+      background-color: rgb(123, 184, 123);
+    }
+
+    >.section5 {
+      grid-area: box5;
+      background-color: rgb(122, 122, 221);
+    }
   }
 }
