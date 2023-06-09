@@ -1,14 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import * as echarts from 'echarts';
-import { baseEchartOptions } from "../shared/base-echart-options";
 import { createEchartsOptions } from "../shared/create-echarts-options";
-import { px } from "../shared/px";
 export const Chart2: React.FC = () => {
   const divRef = useRef(null);
   useEffect(() => {
     var myChart = echarts.init(divRef.current);
     myChart.setOption(createEchartsOptions({
-      ...baseEchartOptions,
       tooltip: {
         trigger: 'axis',
         axisPointer: {

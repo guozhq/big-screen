@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { px } from "../shared/px";
 import * as echarts from 'echarts';
-import { baseEchartOptions } from "../shared/base-echart-options";
 import { createEchartsOptions } from "../shared/create-echarts-options";
 
 export const Chart1: React.FC = () => {
@@ -9,7 +8,6 @@ export const Chart1: React.FC = () => {
   useEffect(() => {
     var myChart = echarts.init(divRef.current);
     myChart.setOption(createEchartsOptions({
-      ...baseEchartOptions,
       xAxis: {
         type: 'category',
         data: ['城关区', '七里河区', '西固区', '安宁区', '红谷区', '永登区', '皋兰区', '榆中区', '兰州新区'],
