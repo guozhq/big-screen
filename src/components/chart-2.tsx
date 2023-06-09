@@ -9,12 +9,6 @@ export const Chart2: React.FC = () => {
     var myChart = echarts.init(divRef.current);
     myChart.setOption(createEchartsOptions({
       ...baseEchartOptions,
-      grid: {
-        x: px(100),
-        y: px(40),
-        x2: px(40),
-        y2: px(40),
-      },
       tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -27,7 +21,7 @@ export const Chart2: React.FC = () => {
       },
       yAxis: {
         type: 'category',
-        data: ['城关区', '七里河区', '西固区', '安宁区', '红谷区', '永登区', '皋兰区', '榆中区', '兰州新区']
+        data: ['城关区公安局', '七里河区公安局', '西固区公安局', '安宁区公安局', '红谷区公安局', '永登区公安局', '皋兰区公安局', '榆中区公安局', '兰州新区公安局']
       },
       series: [
         {
