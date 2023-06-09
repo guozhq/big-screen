@@ -1,15 +1,15 @@
 import React, { useRef, useEffect } from "react";
 import { px } from "../shared/px";
 import * as echarts from 'echarts';
+import { baseEchartOptions } from "../shared/base-echart-options";
+import { createEchartsOptions } from "../shared/create-echarts-options";
 
 export const Chart1: React.FC = () => {
   const divRef = useRef(null);
   useEffect(() => {
     var myChart = echarts.init(divRef.current);
-    myChart.setOption({
-      textStyle: {
-        color: '#79839E'
-      },
+    myChart.setOption(createEchartsOptions({
+      ...baseEchartOptions,
       xAxis: {
         type: 'category',
         data: ['城关区', '七里河区', '西固区', '安宁区', '红谷区', '永登区', '皋兰区', '榆中区', '兰州新区'],
@@ -46,13 +46,7 @@ export const Chart1: React.FC = () => {
           type: 'bar'
         }
       ],
-      grid: {
-        x: px(40),
-        y: px(40),
-        x2: px(40),
-        y2: px(40),
-      }
-    });
+    }));
   }, [])
   return (
     <div className="bordered 管辖统计">
