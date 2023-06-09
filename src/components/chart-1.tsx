@@ -8,6 +8,12 @@ export const Chart1: React.FC = () => {
   useEffect(() => {
     var myChart = echarts.init(divRef.current);
     myChart.setOption(createEchartsOptions({
+      grid: {
+        x: px(50),
+        y: px(30),
+        x2: px(40),
+        y2: px(50),
+      },
       xAxis: {
         type: 'category',
         data: ['城关区', '七里河区', '西固区', '安宁区', '红谷区', '永登区', '皋兰区', '榆中区', '兰州新区'],
@@ -41,7 +47,7 @@ export const Chart1: React.FC = () => {
       series: [
         {
           data: [10, 15, 20, 25, 30, 35, 40, 45, 55],
-          type: 'bar'
+          type: 'bar',
         }
       ],
     }));

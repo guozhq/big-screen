@@ -2,14 +2,14 @@ import { px } from './px';
 export const baseEchartOptions = {
   textStyle: {
     fontSize: px(12),
-    colot: '#79839E'
+    color: '#79839E'
   },
   title: { show: false },
   legend: { show: false },
   grid: {
-    x: px(20),
-    y: px(20),
-    x2: px(20),
-    y2: px(20),
+    x: px(55),
+    y: px(30),
+    x2: px(40),
+    y2: px(50),
   }
 }
