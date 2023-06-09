@@ -32,10 +32,10 @@ code {
 body {
   font-family: $font-hei;
   font-size: 16px;
+  background: #01030d;
 }
 
 #root {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
 }

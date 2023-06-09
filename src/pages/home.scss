@@ -23,29 +23,49 @@
       "box1 box2 box4 box5" 755fr
       "box3 box3 box4 box5" 363fr / 366fr 361fr 811fr 747fr;
 
+    >section {
+      border: 1px solid #08519f;
+      border-radius: 4px;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        border-radius: 4px;
+        box-shadow:
+          17px 0 0 -16px #0f356f,
+          -17px 0 0 -16px #0f356f,
+          0 17px 0 -16px #0f356f,
+          0 -17px 0 -16px #0f356f,
+          11px 0 0 -10px #0e2955,
+          -11px 0 0 -10px #0e2955,
+          0 11px 0 -10px #0e2955,
+          0 -11px 0 -10px #0e2955, ;
+      }
+    }
+
     >.section1 {
       grid-area: box1;
-      background: rgb(178, 178, 201);
     }
 
     >.section2 {
       grid-area: box2;
-      background-color: royalblue;
     }
 
     >.section3 {
       grid-area: box3;
-      background-color: rgb(184, 99, 99);
     }
 
     >.section4 {
       grid-area: box4;
-      background-color: rgb(123, 184, 123);
     }
 
     >.section5 {
       grid-area: box5;
-      background-color: rgb(122, 122, 221);
     }
   }
 }
