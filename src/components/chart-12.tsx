@@ -25,7 +25,7 @@ export const Chart12 = () => {
       grid: { x: 0, x2: 0, y: 0, y2: 0, containLabel: true },
       legend: {
         orient: 'vertical',
-        left: 'left',
+        left: px(20),
         top: 'center',
         textStyle: { color: 'white' },
         itemWidth: px(10),
@@ -37,7 +37,7 @@ export const Chart12 = () => {
       },
       series: [
         {
-          center: ['60%', '50%'],
+          center: ['65%', '50%'],
           type: 'pie',
           radius: '80%',
           label: { show: false },
@@ -57,7 +57,7 @@ export const Chart12 = () => {
 
   return (
     <div className="年龄段-图1">
-      <div className="chart">
+      <div className="chart" >
         <div className="main" ref={divRef} />
       </div>
     </div>
