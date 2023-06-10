@@ -11,7 +11,7 @@ export const Chart2: React.FC = () => {
         x: px(80),
         y: px(30),
         x2: px(0),
-        y2: px(50),
+        y2: px(20),
       },
       tooltip: {
         trigger: 'axis',
