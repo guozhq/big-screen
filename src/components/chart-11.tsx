@@ -6,9 +6,26 @@ import { px } from '../shared/px';
 export const Chart11 = () => {
   const divRef = useRef(null);
   const colors = ['#F46064', '#F38E1C', '#1CDB7C', '#8D70F8', '#33A4FA'];
+  const myChart = useRef(null);
+  const data = [
+    { value: 0.36, name: '刑事案件' },
+    { value: 0.20, name: '民事案件' },
+    { value: 0.18, name: '经济案件' },
+    { value: 0.24, name: '其他案件' },
+  ]
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
-    myChart.setOption(createEchartsOptions({
+    setInterval(() => {
+      const newData = [
+        { value: Math.floor(Math.random() * 100) / 100, name: '刑事案件' },
+        { value: Math.floor(Math.random() * 100) / 100, name: '民事案件' },
+        { value: Math.floor(Math.random() * 100) / 100, name: '经济案件' },
+        { value: Math.floor(Math.random() * 100) / 100, name: '其他案件' },
+      ];
+      x(newData);
+    }, 5000);
+  }, [])
+  const x = (data) => {
+    myChart.current.setOption(createEchartsOptions({
       color: colors,
       xAxis: { show: false },
       yAxis: { show: false },
@@ -32,15 +49,14 @@ export const Chart11 = () => {
             shadowBlur: px(200),
             shadowColor: 'rgba(0, 0, 0, 0.5)'
           },
-          data: [
-            { value: 0.36, name: '刑事案件' },
-            { value: 0.20, name: '民事案件' },
-            { value: 0.18, name: '经济案件' },
-            { value: 0.24, name: '其他案件' },
-          ]
+          data: data
         }
       ]
     }));
+  }
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    x(data)
   }, []);
 
   return (

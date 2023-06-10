@@ -4,9 +4,36 @@ import { createEchartsOptions } from "../shared/create-echarts-options";
 import { px } from "../shared/px";
 export const Chart2: React.FC = () => {
   const divRef = useRef(null);
+  const myChart = useRef(null)
+  const data = [
+    { name: '城关区公安局', 2011: 2, 2012: 3 },
+    { name: '七里河区公安局', 2011: 2, 2012: 3 },
+    { name: '西固区公安局', 2011: 2, 2012: 3 },
+    { name: '安宁区公安局', 2011: 2, 2012: 3 },
+    { name: '红古区公安局', 2011: 2, 2012: 3 },
+    { name: '永登县公安局', 2011: 2, 2012: 3 },
+    { name: '皋兰县公安局', 2011: 2, 2012: 3 },
+    { name: '榆中县公安局', 2011: 2, 2012: 3 },
+    { name: '新区公安局', 2011: 2, 2012: 3 },
+  ];
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
-    myChart.setOption(createEchartsOptions({
+    setInterval(() => {
+      const newData = [
+        { name: '城关区公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+        { name: '七里河区公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+        { name: '西固区公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+        { name: '安宁区公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+        { name: '红古区公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+        { name: '永登县公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+        { name: '皋兰县公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+        { name: '榆中县公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+        { name: '新区公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+      ];
+      x(newData);
+    }, 1500);
+  }, [])
+  const x = (data) => {
+    myChart.current.setOption(createEchartsOptions({
       grid: {
         x: px(80),
         y: px(30),
@@ -28,7 +55,7 @@ export const Chart2: React.FC = () => {
       yAxis: {
         axisTick: { show: false },
         type: 'category',
-        data: ['城关区公安局', '七里河区公安局', '西固区公安局', '安宁区公安局', '红谷区公安局', '永登区公安局', '皋兰区公安局', '榆中区公安局', '兰州新区公安局'],
+        data: data.map(i => i.name),
         axisLabel: {
           formatter(val) {
             return val.replace('公安局', '\n公安局');
@@ -39,7 +66,7 @@ export const Chart2: React.FC = () => {
         {
           name: '2011',
           type: 'bar',
-          data: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+          data: data.map(i => i[2011]),
           itemStyle: {
             normal: {
               color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
@@ -55,7 +82,7 @@ export const Chart2: React.FC = () => {
         {
           name: '2012',
           type: 'bar',
-          data: [2, 3, 4, 5, 6, 7, 8, 9, 10],
+          data: data.map(i => i[2012]),
           itemStyle: {
             normal: {
               color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
@@ -69,8 +96,12 @@ export const Chart2: React.FC = () => {
           }
         }
       ]
-    }));
-  }, [])
+    }))
+  };
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    x(data);
+  }, []);
   return (
     <div className="bordered 破获排名">
       <h2>案发破获排名</h2>

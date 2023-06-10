@@ -5,9 +5,28 @@ import { createEchartsOptions } from "../shared/create-echarts-options";
 
 export const Chart3: React.FC = () => {
   const divRef = useRef(null);
+  const myChart = useRef(null);
+  const data = [
+    { name: '抢劫', 2010: 0.01, 2011: 0.02, 2012: 0.03, 2013: 0.04, 2014: 0.05, 2015: 0.06, 2016: 0.07, 2017: 0.08, 2018: 0.09 },
+    { name: '醉驾', 2010: 0.02, 2011: 0.03, 2012: 0.04, 2013: 0.05, 2014: 0.06, 2015: 0.07, 2016: 0.08, 2017: 0.09, 2018: 0.10 },
+    { name: '盗窃', 2010: 0.03, 2011: 0.04, 2012: 0.05, 2013: 0.06, 2014: 0.07, 2015: 0.08, 2016: 0.09, 2017: 0.10, 2018: 0.11 },
+    { name: '故意杀人', 2010: 0.04, 2011: 0.05, 2012: 0.06, 2013: 0.07, 2014: 0.08, 2015: 0.09, 2016: 0.10, 2017: 0.11, 2018: 0.12 },
+    { name: '故意伤人', 2010: 0.05, 2011: 0.06, 2012: 0.07, 2013: 0.08, 2014: 0.09, 2015: 0.10, 2016: 0.11, 2017: 0.12, 2018: 0.13 },
+  ]
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
-    myChart.setOption(createEchartsOptions({
+    setInterval(() => {
+      const newData = [
+        { name: '抢劫', 2010: Math.floor(Math.random() * 100) / 100, 2011: Math.floor(Math.random() * 100) / 100, 2012: Math.floor(Math.random() * 100) / 100, 2013: Math.floor(Math.random() * 100) / 100, 2014: Math.floor(Math.random() * 100) / 100, 2015: Math.floor(Math.random() * 100) / 100, 2016: Math.floor(Math.random() * 100) / 100, 2017: Math.floor(Math.random() * 100) / 100, 2018: Math.floor(Math.random() * 100) / 100 },
+        { name: '醉驾', 2010: Math.floor(Math.random() * 100) / 100, 2011: Math.floor(Math.random() * 100) / 100, 2012: Math.floor(Math.random() * 100) / 100, 2013: Math.floor(Math.random() * 100) / 100, 2014: Math.floor(Math.random() * 100) / 100, 2015: Math.floor(Math.random() * 100) / 100, 2016: Math.floor(Math.random() * 100) / 100, 2017: Math.floor(Math.random() * 100) / 100, 2018: Math.floor(Math.random() * 100) / 100 },
+        { name: '盗窃', 2010: Math.floor(Math.random() * 100) / 100, 2011: Math.floor(Math.random() * 100) / 100, 2012: Math.floor(Math.random() * 100) / 100, 2013: Math.floor(Math.random() * 100) / 100, 2014: Math.floor(Math.random() * 100) / 100, 2015: Math.floor(Math.random() * 100) / 100, 2016: Math.floor(Math.random() * 100) / 100, 2017: Math.floor(Math.random() * 100) / 100, 2018: Math.floor(Math.random() * 100) / 100 },
+        { name: '故意杀人', 2010: Math.floor(Math.random() * 100) / 100, 2011: Math.floor(Math.random() * 100) / 100, 2012: Math.floor(Math.random() * 100) / 100, 2013: Math.floor(Math.random() * 100) / 100, 2014: Math.floor(Math.random() * 100) / 100, 2015: Math.floor(Math.random() * 100) / 100, 2016: Math.floor(Math.random() * 100) / 100, 2017: Math.floor(Math.random() * 100) / 100, 2018: Math.floor(Math.random() * 100) / 100 },
+        { name: '故意伤人', 2010: Math.floor(Math.random() * 100) / 100, 2011: Math.floor(Math.random() * 100) / 100, 2012: Math.floor(Math.random() * 100) / 100, 2013: Math.floor(Math.random() * 100) / 100, 2014: Math.floor(Math.random() * 100) / 100, 2015: Math.floor(Math.random() * 100) / 100, 2016: Math.floor(Math.random() * 100) / 100, 2017: Math.floor(Math.random() * 100) / 100, 2018: Math.floor(Math.random() * 100) / 100 },
+      ];
+      x(newData);
+    }, 1500);
+  }, [])
+  const x = (data) => {
+    myChart.current.setOption(createEchartsOptions({
       legend: {
         bottom: px(10),
         textStyle: { color: 'white' },
@@ -38,39 +57,22 @@ export const Chart3: React.FC = () => {
           }
         }
       },
-      series: [
-        {
-          name: '抢劫',
-          type: 'line',
-          data: [0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09].reverse()
-        },
-        {
-          name: '醉驾',
-          type: 'line',
-          data: [0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10].reverse()
-        },
-        {
-          name: '盗窃',
-          type: 'line',
-          data: [0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10, 0.11].reverse()
-        },
-        {
-          name: '故意杀人',
-          type: 'line',
-          data: [0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10, 0.11, 0.12].reverse()
-        },
-        {
-          name: '故意伤人',
-          type: 'line',
-          data: [0.05, 0.06, 0.07, 0.08, 0.09, 0.10, 0.11, 0.12, 0.13].reverse()
-        }
-      ].map(obj => ({
-        ...obj,
-        symbol: 'circle',
-        symbolSize: px(12),
-        lineStyle: { width: px(2) }
+      series: data.map(i => ({
+        name: i.name,
+        data: [i[2010], i[2011], i[2012], i[2013], i[2014], i[2015], i[2016], i[2017], i[2018]]
       }))
+        .map(obj => ({
+          ...obj,
+          symbol: 'circle',
+          type: 'line',
+          symbolSize: px(12),
+          lineStyle: { width: px(2) }
+        }))
     }));
+  }
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    x(data)
   }, [])
   return (
     <div className="bordered 趋势分析">

@@ -5,9 +5,36 @@ import { createEchartsOptions } from "../shared/create-echarts-options";
 
 export const Chart1: React.FC = () => {
   const divRef = useRef(null);
+  const myChart = useRef(null);
+  const data = [
+    { name: '城关区', value: 10 },
+    { name: '七里河区', value: 15 },
+    { name: '西固区', value: 20 },
+    { name: '安宁区', value: 25 },
+    { name: '红古区', value: 30 },
+    { name: '永登县', value: 35 },
+    { name: '皋兰县', value: 40 },
+    { name: '榆中县', value: 45 },
+    { name: '新区', value: 50 },
+  ];
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
-    myChart.setOption(createEchartsOptions({
+    setInterval(() => {
+      const newData = [
+        { name: '城关区', value: Math.floor(Math.random() * 50) + 1 },
+        { name: '七里河区', value: Math.floor(Math.random() * 50) + 1 },
+        { name: '西固区', value: Math.floor(Math.random() * 50) + 1 },
+        { name: '安宁区', value: Math.floor(Math.random() * 50) + 1 },
+        { name: '红古区', value: Math.floor(Math.random() * 50) + 1 },
+        { name: '永登县', value: Math.floor(Math.random() * 50) + 1 },
+        { name: '皋兰县', value: Math.floor(Math.random() * 50) + 1 },
+        { name: '榆中县', value: Math.floor(Math.random() * 50) + 1 },
+        { name: '新区', value: Math.floor(Math.random() * 50) + 1 },
+      ];
+      x(newData);
+    }, 1500);
+  }, [])
+  const x = (data) => {
+    myChart.current.setOption(createEchartsOptions({
       grid: {
         x: px(50),
         y: px(30),
@@ -16,7 +43,7 @@ export const Chart1: React.FC = () => {
       },
       xAxis: {
         type: 'category',
-        data: ['城关区', '七里河区', '西固区', '安宁区', '红谷区', '永登区', '皋兰区', '榆中区', '兰州新区'],
+        data: data.map(i => i.name),
         axisTick: {
           show: false,
         },
@@ -46,11 +73,15 @@ export const Chart1: React.FC = () => {
       },
       series: [
         {
-          data: [10, 15, 20, 25, 30, 35, 40, 45, 55],
+          data: data.map(i => i.value),
           type: 'bar',
         }
       ],
     }));
+  }
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    x(data);
   }, [])
   return (
     <div className="bordered 管辖统计">
