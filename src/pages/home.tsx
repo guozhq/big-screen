@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './home.scss';
 import headerBg from '../images/header.png';
 import { Chart1 } from '../components/chart-1';
@@ -17,10 +17,29 @@ import { Chart13 } from '../components/chart-13';
 import { Chart14 } from '../components/chart-14';
 
 export const Home = () => {
+  const [currentTime, setCurrentTime] = useState(new Date());
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date())
+    }, 1000);
+    return () => {
+      clearInterval(timer);
+    }
+  }, [])
   const year = new Date().getFullYear();
+  const month = new Date().getMonth() + 1;
+  const day = new Date().getDate();
+  const hour = new Date().getHours();
+  const minutes = new Date().getMinutes();
+  const seconds = new Date().getSeconds();
   return (
     <div className="home">
-      <header style={{ backgroundImage: `url(${headerBg})` }}></header>
+      <header style={{ backgroundImage: `url(${headerBg})` }}>
+        <div className="headfont">
+          <span className="title">瑞珀市公安局合成作战平台</span>
+          <span className="time">{year}年{month}月{day}日{hour}时{minutes}分{seconds}秒</span>
+        </div>
+      </header>
       <main>
         <section className="section1">
           <Chart1 />
@@ -66,7 +85,7 @@ export const Home = () => {
         </section>
       </main>
       <footer>
-        &copy; 大屏可视化项目-数据仅供展示 2020-{year}
+        &copy; 大屏可视化项目-数据仅供展示 {year}
       </footer>
     </div>
   );

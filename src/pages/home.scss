@@ -16,6 +16,36 @@
     background-size: cover;
     width: px(2420);
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: px(20);
+
+    .headfont {
+      height: px(99);
+      min-width: px(750);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .title {
+        font-size: px(45);
+        background-image: linear-gradient(90deg, rgba(155, 188, 218, 1) 0%, rgba(24, 176, 255, 1) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-weight: 1000;
+      }
+
+      .time {
+        margin-left: auto;
+        font-size: px(12);
+        color: #8b83d8;
+      }
+    }
+
+
   }
 
   >footer {
@@ -193,7 +223,7 @@
     }
 
     .籍贯 {
-      height: px(774);
+      height: px(759);
       background: transparent;
 
       >.wrapper {
@@ -246,7 +276,7 @@
     }
 
     .破获排名 {
-      height: px(423);
+      height: px(410);
 
       .legend {
         display: flex;
@@ -283,7 +313,7 @@
     .年龄段 {
       display: flex;
       flex-direction: column;
-      height: px(372);
+      height: px(364);
 
       >.charts {
         padding: px(30);
