@@ -91,6 +91,9 @@
 
     >.section4 {
       grid-area: box4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     >.section5 {
@@ -102,7 +105,8 @@
     .趋势分析,
     .案发时段,
     .战果,
-    .籍贯 {
+    .籍贯,
+    .年龄段 {
       height: px(315);
       display: flex;
       flex-direction: column;
@@ -227,6 +231,29 @@
         .second {
           background: linear-gradient(145deg, #b92ae8 0%, #6773e7 100%);
         }
+      }
+    }
+
+    .年龄段 {
+      display: flex;
+      flex-direction: column;
+      height: px(363);
+
+      >.charts {
+        width: 100%;
+        flex: 1;
+        border: 1px solid red;
+        display: flex;
+        padding: px(30);
+      }
+
+      &-图1,
+      &-图2,
+      &-图3 {
+        flex: 1;
+        border: 1px solid red;
+        display: flex;
+        flex-direction: column;
       }
     }
   }
