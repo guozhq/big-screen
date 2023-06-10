@@ -66,7 +66,7 @@ export const Home = () => {
         </section>
       </main>
       <footer>
-        &copy; 山西省 2020-{year}
+        &copy; 大屏可视化项目-数据仅供展示 2020-{year}
       </footer>
     </div>
   );

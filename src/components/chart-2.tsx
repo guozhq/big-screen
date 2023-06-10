@@ -6,28 +6,28 @@ export const Chart2: React.FC = () => {
   const divRef = useRef(null);
   const myChart = useRef(null)
   const data = [
-    { name: '城关区公安局', 2011: 2, 2012: 3 },
-    { name: '七里河区公安局', 2011: 2, 2012: 3 },
-    { name: '西固区公安局', 2011: 2, 2012: 3 },
-    { name: '安宁区公安局', 2011: 2, 2012: 3 },
-    { name: '红古区公安局', 2011: 2, 2012: 3 },
-    { name: '永登县公安局', 2011: 2, 2012: 3 },
-    { name: '皋兰县公安局', 2011: 2, 2012: 3 },
-    { name: '榆中县公安局', 2011: 2, 2012: 3 },
-    { name: '新区公安局', 2011: 2, 2012: 3 },
+    { name: '飘零城公安局', 2011: 2, 2012: 3 },
+    { name: '幽影岛公安局', 2011: 2, 2012: 3 },
+    { name: '无边海公安局', 2011: 2, 2012: 3 },
+    { name: '漫天云海公安局', 2011: 2, 2012: 3 },
+    { name: '狂风岭公安局', 2011: 2, 2012: 3 },
+    { name: '神秘谷公安局', 2011: 2, 2012: 3 },
+    { name: '冰雪荒原公安局', 2011: 2, 2012: 3 },
+    { name: '碧空山公安局', 2011: 2, 2012: 3 },
+    { name: '烟波湖公安局', 2011: 2, 2012: 3 },
   ];
   useEffect(() => {
     setInterval(() => {
       const newData = [
-        { name: '城关区公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
-        { name: '七里河区公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
-        { name: '西固区公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
-        { name: '安宁区公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
-        { name: '红古区公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
-        { name: '永登县公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
-        { name: '皋兰县公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
-        { name: '榆中县公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
-        { name: '新区公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+        { name: '飘零城公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+        { name: '幽影岛公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+        { name: '无边海公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+        { name: '漫天云海公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+        { name: '狂风岭公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+        { name: '神秘谷公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+        { name: '冰雪荒原公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+        { name: '碧空山公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
+        { name: '烟波湖公安局', 2011: Math.floor(Math.random() * 10), 2012: Math.floor(Math.random() * 10) },
       ];
       x(newData);
     }, 1500);

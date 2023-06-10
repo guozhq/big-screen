@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
 import { createEchartsOptions } from '../shared/create-echarts-options';
 import { px } from '../shared/px';
+import Decimal from 'decimal.js';
 
 export const Chart11 = () => {
   const divRef = useRef(null);
@@ -16,13 +17,13 @@ export const Chart11 = () => {
   useEffect(() => {
     setInterval(() => {
       const newData = [
-        { value: Math.floor(Math.random() * 100) / 100, name: '刑事案件' },
-        { value: Math.floor(Math.random() * 100) / 100, name: '民事案件' },
-        { value: Math.floor(Math.random() * 100) / 100, name: '经济案件' },
-        { value: Math.floor(Math.random() * 100) / 100, name: '其他案件' },
+        { value: (new Decimal(Math.random())).toFixed(2), name: '刑事案件' },
+        { value: new Decimal(Math.random()).toFixed(2), name: '民事案件' },
+        { value: new Decimal(Math.random()).toFixed(2), name: '经济案件' },
+        { value: new Decimal(Math.random()).toFixed(2), name: '其他案件' },
       ];
       x(newData);
-    }, 5000);
+    }, 1000);
   }, [])
   const x = (data) => {
     myChart.current.setOption(createEchartsOptions({

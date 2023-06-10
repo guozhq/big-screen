@@ -7,15 +7,15 @@ export const Chart12 = () => {
   const divRef = useRef(null);
   const colors = ['#F46064', '#F38E1C', '#1CDB7C', '#8D70F8', '#33A4FA'];
   const data = [
-    { value: 0.08, name: '东岗路' },
-    { value: 0.06, name: '段家滩' },
-    { value: 0.11, name: '雁北' },
-    { value: 0.09, name: '五泉山' },
-    { value: 0.12, name: '中山路' },
-    { value: 0.06, name: '庆阳路' },
-    { value: 0.08, name: '武都路' },
-    { value: 0.08, name: '酒泉路' },
-    { value: 0.08, name: '天水路' },
+    { value: 0.08, name: '幽谷路' },
+    { value: 0.06, name: '烈火街' },
+    { value: 0.11, name: '长夜街' },
+    { value: 0.09, name: '绝壁巷' },
+    { value: 0.12, name: '梦幻路' },
+    { value: 0.06, name: '无尽街' },
+    { value: 0.08, name: '幻境路' },
+    { value: 0.08, name: '逆风街' },
+    { value: 0.08, name: '虚空路' },
   ];
   useEffect(() => {
     var myChart = echarts.init(divRef.current);

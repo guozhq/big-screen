@@ -381,6 +381,11 @@
   dependencies:
     "ms" "2.1.2"
 
+"decimal.js@^10.4.3":
+  "integrity" "sha512-VBBaLc1MgL5XpzgIP7ny5Z6Nx3UrRkIViUkPUdtl9aya5amy3De1gsUUSB1g3+3sExYNjCAsAznmukyxCb1GRA=="
+  "resolved" "https://registry.npmmirror.com/decimal.js/-/decimal.js-10.4.3.tgz"
+  "version" "10.4.3"
+
 "echarts@5.0.2":
   "integrity" "sha512-En0VYpc96nw2/2AZoBWPHsGi471zMublttj50kfFpYAeR4geup0Tj9iVgEXh7QYZFPnRiruDJEjcB5PXZ+BYzQ=="
   "resolved" "https://registry.npmmirror.com/echarts/-/echarts-5.0.2.tgz"
